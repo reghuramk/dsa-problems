@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const groupAnagrams = require('./groupAnagram')
-const findDuplicates = require('./findDuplicates')
+const findDuplicates = require('./arrays&hashing/easy/findDuplicates')
 const anagrams = require('./anagram')
 const twoSum = require('./twoSum')
 
