@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const groupAnagrams = require('./groupAnagram')
-const findDuplicates = require('./arrays&hashing/easy/findDuplicates')
-const anagrams = require('./anagram')
-const twoSum = require('./twoSum')
-const factorial = require('./factorial')
+const groupAnagrams = require('./1.arrays&hashing/medium/groupAnagram')
+const findDuplicates = require('./1.arrays&hashing/easy/findDuplicates')
+const anagrams = require('./1.arrays&hashing/easy/anagram')
+const twoSum = require('./1.arrays&hashing/easy/twoSum')
+const factorial = require('./2.rest/factorial')
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
