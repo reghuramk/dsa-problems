@@ -5,6 +5,7 @@ const groupAnagrams = require('./groupAnagram')
 const findDuplicates = require('./arrays&hashing/easy/findDuplicates')
 const anagrams = require('./anagram')
 const twoSum = require('./twoSum')
+const factorial = require('./factorial')
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
@@ -28,4 +29,9 @@ app.get('/anagrams', (req, res) => {
 app.get('/twoSum', (req, res) => {
   const result = twoSum.validTwoSum([2,7,11,15], 9)
   res.send(result)
+})
+
+app.get('/factorial', (req, res) => {
+  const result = factorial.findFactorial(5)
+  res.send(result.toString())
 })
