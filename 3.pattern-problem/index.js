@@ -377,14 +377,15 @@
 // ];
 
 const nbynstarpattern = (n) => {
-  let pattern = "";
-  for (i = 0; i < n; i++) {
-    for (j = 0; j < n; j++) {
-      pattern += " *";
+    let pattern = "";
+    for (i = 0; i < n; i++) {
+      for (j = 0; j < n; j++) {
+        pattern += " *";
+      }
+      pattern += "\n";
     }
-    pattern += "\n";
-  }
-  return pattern;
-};
-
-module.exports = { nbynstarpattern };
+    return pattern;
+  };
+  
+  module.exports = { nbynstarpattern };
+  
