@@ -6,6 +6,7 @@ const findDuplicates = require('./1.arrays&hashing/easy/findDuplicates')
 const anagrams = require('./1.arrays&hashing/easy/anagram')
 const twoSum = require('./1.arrays&hashing/easy/twoSum')
 const factorial = require('./2.rest/factorial')
+const starPattern = require('./pattern-problem/star-pattern');
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
@@ -34,4 +35,9 @@ app.get('/twoSum', (req, res) => {
 app.get('/factorial', (req, res) => {
   const result = factorial.findFactorial(5)
   res.send(result.toString())
+})
+
+app.get('/starPattern', (req, res) => {
+  const result = starPattern.nbynstarpattern(10)
+  res.send(result)
 })
