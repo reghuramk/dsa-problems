@@ -377,15 +377,48 @@
 // ];
 
 const nbynstarpattern = (n) => {
-    let pattern = "";
-    for (i = 0; i < n; i++) {
-      for (j = 0; j < n; j++) {
-        pattern += " *";
-      }
-      pattern += "\n";
+  let pattern = "";
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < n; j++) {
+      pattern += " *";
     }
-    return pattern;
-  };
-  
-  module.exports = { nbynstarpattern };
-  
+    pattern += "\n";
+  }
+  return pattern;
+};
+
+
+const trianglePattern = (n) => {
+  let pattern = "";
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < i; j++) {
+      pattern += "*";
+    }
+    pattern += "\n";
+  }
+  return pattern;
+};
+
+module.exports = { nbynstarpattern, trianglePattern };
+
+
+//
+// i = 0 0 < 5 i = 1
+// j = 0 0 < 1 j = 1
+//       *           
+// i -> 1 < 5 i = 2                 
+// j -> 1 < 2 j = 2
+//       *
+//       *
+// 
+// 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//

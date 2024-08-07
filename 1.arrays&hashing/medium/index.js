@@ -1,4 +1,4 @@
-const anagrams = (strs) => {
+const groupAnagrams = (strs) => {
     const map = new Map()
 
     for (let str of strs) {
@@ -13,4 +13,4 @@ const anagrams = (strs) => {
     return Array.from(map.values())
 }
 
-module.exports = { anagrams }
+module.exports = { groupAnagrams }

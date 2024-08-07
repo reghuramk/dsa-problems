@@ -5,7 +5,7 @@ function isAnagram(s, t) {
   return sortedStr1 === sortedStr2;
 }
 
-const duplicates = (dataSet) => {
+const hasDuplicates = (dataSet) => {
   const dupArr = new Set();
 
   for (const item of dataSet) {
@@ -32,4 +32,4 @@ const validTwoSum = (nums, target) => {
   return [];
 };
 
-module.exports = { isAnagram, validTwoSum, duplicates };
+module.exports = { isAnagram, validTwoSum, hasDuplicates };
