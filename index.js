@@ -4,7 +4,7 @@ const app = express();
 const arrayHashingEasy = require("./1.arrays&hashing/easy/index");
 const arrayHashingMedium = require("./1.arrays&hashing/medium/index");
 const restOfTheProblems = require("./2.rest/index");
-const starPattern = require("./3.pattern-problem/index");
+const pattern = require("./3.pattern-problem/index");
 
 const port = 3000;
 
@@ -47,11 +47,36 @@ app.get("/factorial", (req, res) => {
 });
 
 app.get("/starPattern", (req, res) => {
-  const result = starPattern.nbynstarpattern(5);
+  const result = pattern.starPattern(5);
   res.send(result);
 });
 
-app.get("/starPatternTriangle", (req, res) => {
-  const result = starPattern.trianglePattern(5);
+app.get("/rightTriangleStarPattern", (req, res) => {
+  const result = pattern.rightTriangleStarPattern(5);
+  res.send(result);
+});
+
+app.get("/rightInverseTriangleStarPattern", (req, res) => {
+  const result = pattern.rightInverseTriangleStarPattern(5);
+  res.send(result);
+});
+
+app.get("/rightTriangleNumPattern", (req, res) => {
+  const result = pattern.rightTriangleNumPattern(5);
+  res.send(result);
+});
+
+app.get("/rightTriangleNumRepetitivePattern", (req, res) => {
+  const result = pattern.rightTriangleNumRepetitivePattern(5);
+  res.send(result);
+});
+
+app.get("/rightInverseTriangleNumPattern", (req, res) => {
+  const result = pattern.rightInverseTriangleNumPattern(5);
+  res.send(result);
+});
+
+app.get("/straightTriangleStarPattern", (req, res) => {
+  const result = pattern.straightTriangleStarPattern(5);
   res.send(result);
 });
