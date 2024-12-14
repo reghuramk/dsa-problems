@@ -32,4 +32,17 @@ const validTwoSum = (nums, target) => {
   return [];
 };
 
-module.exports = { isAnagram, validTwoSum, hasDuplicates };
+const removeDuplicates = (nums) => {
+  let i = 1;
+
+  for (let j = 1; j < nums.length; j++) {
+      if (nums[j] !== nums[i - 1]) {
+          nums[i] = nums[j];
+          i++;
+      }
+  }
+
+  return i;    
+};
+
+module.exports = { isAnagram, validTwoSum, hasDuplicates, removeDuplicates };

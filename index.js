@@ -27,6 +27,11 @@ app.get("/twoSum", (req, res) => {
   res.send(result);
 });
 
+app.get("/removeDuplicates", (req, res) => {
+  const result = arrayHashingEasy.removeDuplicates([2, 7, 11, 15]);
+  res.send(result);
+});
+
 app.get("/groupAnagrams", (req, res) => {
   const result = arrayHashingMedium.groupAnagrams([
     "eat",
