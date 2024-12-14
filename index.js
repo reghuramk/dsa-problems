@@ -32,6 +32,11 @@ app.get("/removeDuplicates", (req, res) => {
   res.send(result);
 });
 
+app.get("/removeElement", (req, res) => {
+  const result = arrayHashingEasy.removeElement([3,2,2,3], 3);
+  res.send(result);
+});
+
 app.get("/groupAnagrams", (req, res) => {
   const result = arrayHashingMedium.groupAnagrams([
     "eat",

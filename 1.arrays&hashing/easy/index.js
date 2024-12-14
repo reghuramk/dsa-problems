@@ -1,4 +1,4 @@
-function isAnagram(s, t) {
+const isAnagram = (s, t) => {
   const sortedStr1 = s.split("").sort().join("");
   const sortedStr2 = t.split("").sort().join("");
 
@@ -45,4 +45,17 @@ const removeDuplicates = (nums) => {
   return i;    
 };
 
-module.exports = { isAnagram, validTwoSum, hasDuplicates, removeDuplicates };
+const removeElement = (nums, val) => {
+  let k = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+      if (nums[i] !== val) {
+          nums[k] = nums[i];
+          k++;
+      }
+  }
+
+  return k;    
+};
+
+module.exports = { isAnagram, validTwoSum, hasDuplicates, removeDuplicates, removeElement };
