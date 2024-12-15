@@ -37,6 +37,11 @@ app.get("/removeElement", (req, res) => {
   res.send(result);
 });
 
+app.get("/sortedArrayToBST", (req, res) => {
+  const result = arrayHashingEasy.sortedArrayToBST([-10,-3,0,5,9]);
+  res.send(result);
+})
+
 app.get("/groupAnagrams", (req, res) => {
   const result = arrayHashingMedium.groupAnagrams([
     "eat",
