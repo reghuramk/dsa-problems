@@ -27,8 +27,8 @@ app.get("/twoSum", (req, res) => {
   res.send(result);
 });
 
-app.get("/removeDuplicates", (req, res) => {
-  const result = arrayHashingEasy.removeDuplicates([2, 7, 11, 15]);
+app.get("/removeDuplicatesFromSortedArray", (req, res) => {
+  const result = arrayHashingEasy.removeDuplicatesFromSortedArray([2, 7, 11, 15]);
   res.send(result);
 });
 
@@ -44,6 +44,16 @@ app.get("/sortedArrayToBST", (req, res) => {
 
 app.get("/mergeSorteDArray", (req, res) => {
   const result = arrayHashingEasy.mergeSorteDArray([1,2,3,0,0,0]);
+  res.send(result);
+})
+
+app.get("/removeDuplicatesEntries", (req, res) => {
+  const result = arrayHashingEasy.removeDuplicatesEntries([1,2,3,0,0,0]);
+  res.send(result);
+})
+
+app.get("/removeDuplicatesFromSortedArrayAlternateApproach", (req, res) => {
+  const result = arrayHashingEasy.removeDuplicatesFromSortedArrayAlternateApproach([1,2,3,0,0,0]);
   res.send(result);
 })
 

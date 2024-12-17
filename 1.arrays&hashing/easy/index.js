@@ -32,7 +32,14 @@ const validTwoSum = (nums, target) => {
   return [];
 };
 
-const removeDuplicates = (nums) => {
+// Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+
+// Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
+
+// Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums.
+// Return k.
+
+const removeDuplicatesFromSortedArray = (nums) => {
   let i = 1;
 
   for (let j = 1; j < nums.length; j++) {
@@ -44,6 +51,15 @@ const removeDuplicates = (nums) => {
 
   return i;    
 };
+
+// Intresting Alternate Approach to the above problem
+
+function removeDuplicatesFromSortedArrayAlternateApproach(nums) {
+  const setKey = [...new Set(nums)]
+  nums.length = 0
+  nums.push(...setKey)
+  return nums.length;
+}
 
 const removeElement = (nums, val) => {
   let k = 0;
@@ -71,6 +87,10 @@ const sortedArrayToBST = (nums, left = 0, right = nums.length - 1) =>  {
   return node;
 }
 
+const removeDuplicatesEntries = () => {
+  return [...new Set(nums)]
+}
+
 const mergeSorteDArray = (nums1, m, nums2, n) => {
   let midx = m - 1;
   let nidx = n - 1;
@@ -88,4 +108,4 @@ const mergeSorteDArray = (nums1, m, nums2, n) => {
   }    
 };
 
-module.exports = { isAnagram, validTwoSum, hasDuplicates, removeDuplicates, removeElement, sortedArrayToBST, mergeSorteDArray };
+module.exports = { isAnagram, validTwoSum, hasDuplicates, removeDuplicatesFromSortedArray, removeElement, sortedArrayToBST, mergeSorteDArray, removeDuplicatesEntries, removeDuplicatesFromSortedArrayAlternateApproach };
