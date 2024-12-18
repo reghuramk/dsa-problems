@@ -52,6 +52,11 @@ app.get("/removeDuplicatesEntries", (req, res) => {
   res.send(result);
 })
 
+app.get("/searchInsert", (req, res) => {
+  const result = arrayHashingEasy.searchInsert([1,3,5,6], 2);
+  res.send(result);
+})
+
 app.get("/removeDuplicatesFromSortedArrayAlternateApproach", (req, res) => {
   const result = arrayHashingEasy.removeDuplicatesFromSortedArrayAlternateApproach([1,2,3,0,0,0]);
   res.send(result);
