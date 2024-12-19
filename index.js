@@ -62,6 +62,11 @@ app.get("/removeDuplicatesFromSortedArrayAlternateApproach", (req, res) => {
   res.send(result);
 })
 
+app.get("/plusOne", (req, res) => {
+  const result = arrayHashingEasy.plusOne([1,2,3,0,0,0]);
+  res.send(result);
+})
+
 app.get("/groupAnagrams", (req, res) => {
   const result = arrayHashingMedium.groupAnagrams([
     "eat",
