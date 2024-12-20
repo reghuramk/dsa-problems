@@ -101,6 +101,23 @@ const sortedArrayToBST = (nums, left = 0, right = nums.length - 1) =>  {
   return node;
 }
 
+const pascalTriangle = function(numRows) {
+  const res = [[1]];
+
+  for (let i = 0; i < numRows - 1; i++) {
+      const dummyRow = [0, ...res[res.length - 1], 0];
+      const row = [];
+
+      for (let j = 0; j < dummyRow.length - 1; j++) {
+          row.push(dummyRow[j] + dummyRow[j + 1]);
+      }
+
+      res.push(row);
+  }
+
+  return res;    
+};
+
 const searchInsert = function(nums, target) {
   let left = 0;
   let right = nums.length - 1;
@@ -141,4 +158,4 @@ const mergeSorteDArray = (nums1, m, nums2, n) => {
   }    
 };
 
-module.exports = { isAnagram, validTwoSum, hasDuplicates, removeDuplicatesFromSortedArray, removeElement, sortedArrayToBST, mergeSorteDArray, removeDuplicatesEntries, removeDuplicatesFromSortedArrayAlternateApproach, searchInsert, plusOne };
+module.exports = { isAnagram, validTwoSum, hasDuplicates, removeDuplicatesFromSortedArray, removeElement, sortedArrayToBST, mergeSorteDArray, removeDuplicatesEntries, removeDuplicatesFromSortedArrayAlternateApproach, searchInsert, plusOne, pascalTriangle };

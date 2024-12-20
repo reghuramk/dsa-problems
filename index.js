@@ -42,6 +42,11 @@ app.get("/sortedArrayToBST", (req, res) => {
   res.send(result);
 })
 
+app.get("/pascalTriangle", (req, res) => {
+  const result = arrayHashingEasy.pascalTriangle(5);
+  res.send(result);
+})
+
 app.get("/mergeSorteDArray", (req, res) => {
   const result = arrayHashingEasy.mergeSorteDArray([1,2,3,0,0,0]);
   res.send(result);
