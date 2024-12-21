@@ -47,6 +47,11 @@ app.get("/pascalTriangle", (req, res) => {
   res.send(result);
 })
 
+app.get("/maxProfit", (req, res) => {
+  const result = arrayHashingEasy.maxProfit([7,1,5,3,6,4]);
+  res.send(result);
+})
+
 app.get("/mergeSorteDArray", (req, res) => {
   const result = arrayHashingEasy.mergeSorteDArray([1,2,3,0,0,0]);
   res.send(result);
