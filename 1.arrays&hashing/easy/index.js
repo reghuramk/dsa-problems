@@ -1,192 +1,184 @@
-const isAnagram = (s, t) => {
-  const sortedStr1 = s.split("").sort().join("");
-  const sortedStr2 = t.split("").sort().join("");
+class ArrayAndHashingEasy {
+  isAnagram(s, t) {
+    const sortedStr1 = s.split("").sort().join("");
+    const sortedStr2 = t.split("").sort().join("");
 
-  return sortedStr1 === sortedStr2;
-}
-
-const hasDuplicates = (dataSet) => {
-  const dupArr = new Set();
-
-  for (const item of dataSet) {
-    if (dupArr.has(item)) {
-      return true;
-    } else {
-      dupArr.add(item);
-    }
+    return sortedStr1 === sortedStr2;
   }
 
-  return false;
-};
+  hasDuplicates(dataSet) {
+    const dupArr = new Set();
 
-const validTwoSum = (nums, target) => {
-  const map = new Map();
-
-  for (let i = 0; i < nums.length; i++) {
-    if (map.has(target - nums[i])) {
-      return [map.get(target - nums[i]), i];
-    } else {
-      map.set(nums[i], i);
+    for (const item of dataSet) {
+      if (dupArr.has(item)) {
+        return true;
+      } else {
+        dupArr.add(item);
+      }
     }
+
+    return false;
   }
-  return [];
-};
 
-// Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+  validTwoSum(nums, target) {
+    const map = new Map();
 
-// Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
+    for (let i = 0; i < nums.length; i++) {
+      if (map.has(target - nums[i])) {
+        return [map.get(target - nums[i]), i];
+      } else {
+        map.set(nums[i], i);
+      }
+    }
+    return [];
+  }
 
-// Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums.
-// Return k.
+  removeDuplicatesFromSortedArray(nums) {
+    let i = 1;
 
-const removeDuplicatesFromSortedArray = (nums) => {
-  let i = 1;
-
-  for (let j = 1; j < nums.length; j++) {
+    for (let j = 1; j < nums.length; j++) {
       if (nums[j] !== nums[i - 1]) {
-          nums[i] = nums[j];
-          i++;
+        nums[i] = nums[j];
+        i++;
       }
+    }
+
+    return i;
   }
 
-  return i;    
-};
+  removeDuplicatesFromSortedArrayAlternateApproach(nums) {
+    const setKey = [...new Set(nums)];
+    nums.length = 0;
+    nums.push(...setKey);
+    return nums.length;
+  }
 
-// Intresting Alternate Approach to the above problem
+  removeElement(nums, val) {
+    let k = 0;
 
-function removeDuplicatesFromSortedArrayAlternateApproach(nums) {
-  const setKey = [...new Set(nums)]
-  nums.length = 0
-  nums.push(...setKey)
-  return nums.length;
-}
-
-const removeElement = (nums, val) => {
-  let k = 0;
-
-  for (let i = 0; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i++) {
       if (nums[i] !== val) {
-          nums[k] = nums[i];
-          k++;
+        nums[k] = nums[i];
+        k++;
       }
+    }
+
+    return k;
   }
 
-  return k;    
-};
-
-const plusOne = function(digits) {
-  for (let i = digits.length - 1; i >= 0; i--) {
+  plusOne(digits) {
+    for (let i = digits.length - 1; i >= 0; i--) {
       if (digits[i] + 1 !== 10) {
-          digits[i] += 1;
-          return digits;
+        digits[i] += 1;
+        return digits;
       }
       digits[i] = 0;
       if (i === 0) {
-          digits.unshift(1);
-          return digits;
+        digits.unshift(1);
+        return digits;
       }
-  }    
-};
+    }
+  }
 
-const sortedArrayToBST = (nums, left = 0, right = nums.length - 1) =>  {
-  if (left > right) 
-      return null;
-  
-  const mid = Math.floor((left + right) / 2);
-  const node = new TreeNode(nums[mid]);
-  
-  node.left = sortedArrayToBST(nums, left, mid - 1);
-  node.right = sortedArrayToBST(nums, mid + 1, right);
-  
-  return node;
-}
+  sortedArrayToBST(nums, left = 0, right = nums.length - 1) {
+    if (left > right) return null;
 
-const pascalTriangle = function(numRows) {
-  const res = [[1]];
+    const mid = Math.floor((left + right) / 2);
+    const node = new TreeNode(nums[mid]);
 
-  for (let i = 0; i < numRows - 1; i++) {
+    node.left = this.sortedArrayToBST(nums, left, mid - 1);
+    node.right = this.sortedArrayToBST(nums, mid + 1, right);
+
+    return node;
+  }
+
+  pascalTriangle(numRows) {
+    const res = [[1]];
+
+    for (let i = 0; i < numRows - 1; i++) {
       const dummyRow = [0, ...res[res.length - 1], 0];
       const row = [];
 
       for (let j = 0; j < dummyRow.length - 1; j++) {
-          row.push(dummyRow[j] + dummyRow[j + 1]);
+        row.push(dummyRow[j] + dummyRow[j + 1]);
       }
 
       res.push(row);
+    }
+
+    return res;
   }
 
-  return res;    
-};
+  searchInsert(nums, target) {
+    let left = 0;
+    let right = nums.length - 1;
 
-const searchInsert = function(nums, target) {
-  let left = 0;
-  let right = nums.length - 1;
-
-  while (left <= right) {
+    while (left <= right) {
       let mid = Math.floor((left + right) / 2);
 
       if (nums[mid] === target) {
-          return mid;
+        return mid;
       } else if (nums[mid] > target) {
-          right = mid - 1;
+        right = mid - 1;
       } else {
-          left = mid + 1;
+        left = mid + 1;
       }
+    }
+
+    return left;
   }
 
-  return left;    
-};
+  removeDuplicatesEntries(nums) {
+    return [...new Set(nums)];
+  }
 
-const removeDuplicatesEntries = (nums) => {
-  return [...new Set(nums)]
-}
+  mergeSortedArray(nums1, m, nums2, n) {
+    let midx = m - 1;
+    let nidx = n - 1;
+    let right = m + n - 1;
 
-const mergeSorteDArray = (nums1, m, nums2, n) => {
-  let midx = m - 1;
-  let nidx = n - 1;
-  let right = m + n - 1;
-
-  while (nidx >= 0) {
+    while (nidx >= 0) {
       if (midx >= 0 && nums1[midx] > nums2[nidx]) {
-          nums1[right] = nums1[midx];
-          midx--;
+        nums1[right] = nums1[midx];
+        midx--;
       } else {
-          nums1[right] = nums2[nidx];
-          nidx--;
+        nums1[right] = nums2[nidx];
+        nidx--;
       }
       right--;
-  }    
-};
+    }
+  }
 
-const maxProfit = function(prices) {
-  let buyPrice = prices[0];
-  let profit = 0;
+  maxProfit(prices) {
+    let buyPrice = prices[0];
+    let profit = 0;
 
-  for (let i = 1; i < prices.length; i++) {
+    for (let i = 1; i < prices.length; i++) {
       if (buyPrice > prices[i]) {
-          buyPrice = prices[i];
+        buyPrice = prices[i];
       }
 
       profit = Math.max(profit, prices[i] - buyPrice);
+    }
+
+    return profit;
   }
 
-  return profit;    
-};
+  majorityElement(nums) {
+    const hash = {};
+    let res = 0;
+    let majority = 0;
 
-const majorityElement = function(nums) {
-  const hash = {};
-  let res = 0;
-  let majority = 0;
-
-  for (let n of nums) {
+    for (let n of nums) {
       hash[n] = 1 + (hash[n] || 0);
       if (hash[n] > majority) {
-          res = n;
-          majority = hash[n];
+        res = n;
+        majority = hash[n];
       }
+    }
+
+    return res;
   }
+}
 
-  return res;    
-};
-
-module.exports = { isAnagram, validTwoSum, hasDuplicates, removeDuplicatesFromSortedArray, removeElement, sortedArrayToBST, mergeSorteDArray, removeDuplicatesEntries, removeDuplicatesFromSortedArrayAlternateApproach, searchInsert, plusOne, pascalTriangle, maxProfit, majorityElement  };
+module.exports = ArrayAndHashingEasy;
