@@ -77,6 +77,11 @@ app.get("/plusOne", (req, res) => {
   res.send(result);
 })
 
+app.get("/majorityElement", (req, res) => {
+  const result = arrayHashingEasy.majorityElement([3,2,3]);
+  res.send(result);
+})
+
 app.get("/groupAnagrams", (req, res) => {
   const result = arrayHashingMedium.groupAnagrams([
     "eat",
