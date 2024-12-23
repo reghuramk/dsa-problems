@@ -83,6 +83,11 @@ app.get("/majorityElement", (req, res) => {
   res.send(result);
 })
 
+app.get("/getRow", (req, res) => {
+  const result = ArrayAndHashingEasy.getRow(3);
+  res.send(result);
+})
+
 app.get("/groupAnagrams", (req, res) => {
   const result = arrayHashingMedium.groupAnagrams([
     "eat",
