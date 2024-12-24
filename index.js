@@ -6,7 +6,6 @@ import ArrayAndHashingMedium from "./1.arrays&hashing/medium/index";
 const restOfTheProblems = require("./2.rest/index");
 const pattern = require("./3.pattern-problem/index");
 
-
 const port = 3000;
 
 app.listen(port, () => {
@@ -29,64 +28,71 @@ app.get("/twoSum", (req, res) => {
 });
 
 app.get("/removeDuplicatesFromSortedArray", (req, res) => {
-  const result = ArrayAndHashingEasy.removeDuplicatesFromSortedArray([2, 7, 11, 15]);
+  const result = ArrayAndHashingEasy.removeDuplicatesFromSortedArray([
+    2, 7, 11, 15,
+  ]);
   res.send(result);
 });
 
 app.get("/removeElement", (req, res) => {
-  const result = ArrayAndHashingEasy.removeElement([3,2,2,3], 3);
+  const result = ArrayAndHashingEasy.removeElement([3, 2, 2, 3], 3);
   res.send(result);
 });
 
 app.get("/sortedArrayToBST", (req, res) => {
-  const result = ArrayAndHashingEasy.sortedArrayToBST([-10,-3,0,5,9]);
+  const result = ArrayAndHashingEasy.sortedArrayToBST([-10, -3, 0, 5, 9]);
   res.send(result);
-})
+});
 
 app.get("/pascalTriangle", (req, res) => {
   const result = ArrayAndHashingEasy.pascalTriangle(5);
   res.send(result);
-})
+});
 
 app.get("/maxProfit", (req, res) => {
-  const result = ArrayAndHashingEasy.maxProfit([7,1,5,3,6,4]);
+  const result = ArrayAndHashingEasy.maxProfit([7, 1, 5, 3, 6, 4]);
   res.send(result);
-})
+});
 
 app.get("/mergeSorteDArray", (req, res) => {
-  const result = ArrayAndHashingEasy.mergeSorteDArray([1,2,3,0,0,0]);
+  const result = ArrayAndHashingEasy.mergeSorteDArray([1, 2, 3, 0, 0, 0]);
   res.send(result);
-})
+});
 
 app.get("/removeDuplicatesEntries", (req, res) => {
-  const result = ArrayAndHashingEasy.removeDuplicatesEntries([1,2,3,0,0,0]);
+  const result = ArrayAndHashingEasy.removeDuplicatesEntries([
+    1, 2, 3, 0, 0, 0,
+  ]);
   res.send(result);
-})
+});
 
 app.get("/searchInsert", (req, res) => {
-  const result = ArrayAndHashingEasy.searchInsert([1,3,5,6], 2);
+  const result = ArrayAndHashingEasy.searchInsert([1, 3, 5, 6], 2);
   res.send(result);
-})
+});
 
 app.get("/removeDuplicatesFromSortedArrayAlternateApproach", (req, res) => {
-  const result = ArrayAndHashingEasy.removeDuplicatesFromSortedArrayAlternateApproach([1,2,3,0,0,0]);
+  const result =
+    ArrayAndHashingEasy.removeDuplicatesFromSortedArrayAlternateApproach([
+      1, 2, 3, 0, 0, 0,
+    ]);
   res.send(result);
-})
+});
 
 app.get("/plusOne", (req, res) => {
-  const result = ArrayAndHashingEasy.plusOne([1,2,3,0,0,0]);
+  const result = ArrayAndHashingEasy.plusOne([1, 2, 3, 0, 0, 0]);
   res.send(result);
-})
+});
 
 app.get("/majorityElement", (req, res) => {
-  const result = ArrayAndHashingEasy.majorityElement([3,2,3]);
+  const result = ArrayAndHashingEasy.majorityElement([3, 2, 3]);
   res.send(result);
-})
+});
 
 app.get("/getRow", (req, res) => {
   const result = ArrayAndHashingEasy.getRow(3);
   res.send(result);
-})
+});
 
 app.get("/groupAnagrams", (req, res) => {
   const result = ArrayAndHashingMedium.groupAnagrams([
@@ -99,6 +105,11 @@ app.get("/groupAnagrams", (req, res) => {
     "silent",
     "listen",
   ]);
+  res.send(result);
+});
+
+app.get("/getMaxArea", (req, res) => {
+  const result = ArrayAndHashingMedium.maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]);
   res.send(result);
 });
 
