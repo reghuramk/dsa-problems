@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 import ArrayAndHashingEasy from "./1.arrays&hashing/easy";
-const arrayHashingMedium = require("./1.arrays&hashing/medium/index");
+import ArrayAndHashingMedium from "./1.arrays&hashing/medium/index";
 const restOfTheProblems = require("./2.rest/index");
 const pattern = require("./3.pattern-problem/index");
 
@@ -89,7 +89,7 @@ app.get("/getRow", (req, res) => {
 })
 
 app.get("/groupAnagrams", (req, res) => {
-  const result = arrayHashingMedium.groupAnagrams([
+  const result = ArrayAndHashingMedium.groupAnagrams([
     "eat",
     "tea",
     "tan",
