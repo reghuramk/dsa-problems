@@ -113,6 +113,11 @@ app.get("/getMaxArea", (req, res) => {
   res.send(result);
 });
 
+app.get("/getThreeSum", (req, res) => {
+  const result = ArrayAndHashingMedium.threeSum([-1,0,1,2,-1,-4]);
+  res.send(result);
+});
+
 app.get("/factorial", (req, res) => {
   const result = restOfTheProblems.findFactorial(5);
   res.send(result.toString());
