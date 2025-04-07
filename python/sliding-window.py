@@ -29,7 +29,24 @@ class Solution:
 
         return setlength
     
+    def characterReplacement(s, k):
+        res = 0
+        counter = {}
+        l = 0
+        
+        for r in range(len(s)):
+            counter[s[r]] = 1 + counter.get(s[r], 1)
+            
+            if (r - l + 1) - max(counter.values()) > k:
+                counter[s[r]]-=1
+                l+=1
+            
+            res = max(res, r - l + 1)
+             
+        return res
+           
     
 sol = Solution
 print(sol.maxProfit([7, 1, 5, 3, 6, 4])) # 5
 print(sol.lengthOfLongestSubstring("abcabcbb")) # 3
+print(sol.characterReplacement("ABAB", 2))
